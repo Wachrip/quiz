@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Layout from './hoc/Layout/Layout'
-import Quiz from './containers/Quiz/Quiz'
+import Quiz from '../src/containters/Quiz/Quiz'
 
-
-class App extends React.Component {
+class App extends Component{
   render() {
     return (
       <Layout>
-        <Quiz/>
+          <Quiz />
       </Layout>
     );
   }

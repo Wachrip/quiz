@@ -1,22 +1,21 @@
 import React from 'react'
-import './AnswerItem.css'
+import classes from './AnswerItem.module.css'
 
 const AnswerItem = props => {
+  const cls = [classes.AnswerItem]
 
-    const clz = ['AnswerItem']
+  if(props.state) {
+    cls.push(classes[props.state])
+  }
 
-    if(props.state) {
-        clz.push(props.state)
-    }
-
-    return(
-        <li
-            className = {clz.join(' ')}
-            onClick={() => props.onAnswerClick(props.answer.id)}
-        >
-            { props.answer.text }
-        </li>
-    )
+  return(
+    <li 
+      className={cls.join(' ')}
+      onClick={() => {props.onAnswerClick(props.answer.id)}}
+    >
+      { props.answer.text }
+    </li>
+  )
 }
 
 export default AnswerItem
